@@ -1,7 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
-    $form->addInput($email->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 	$github = new Typecho_Widget_Helper_Form_Element_Text('github', NULL, NULL, _t('Github主页地址'), _t('一般为https://github.com/Seevil ,留空则不设置Github地址'));
     $form->addInput($github->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 	$twitter = new Typecho_Widget_Helper_Form_Element_Text('twitter', NULL, NULL, _t('twitter主页地址'), _t('一般为https://twitter.com/skyurl ,留空则不设置twitter地址'));

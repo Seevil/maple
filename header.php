@@ -91,21 +91,20 @@
 		<div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">Categories </div>
                     <div class="flex-1"></div>
                     <div class="flex items-center gap-3">
-                        <a class="hidden sm:flex" href="/archives">Posts</a>
-                        <a class="hidden sm:flex" href="/category">Categories</a>
-                        <a class="hidden sm:flex" href="/tag">Tags</a>
-                        <a class="w-5 h-5 hidden sm:flex" title="Github" target="_blank" rel="noopener" href="<?php if($this->options->github): ?><?php $this->options->github();?><?php endif; ?>">
+					<?php $this->widget('Widget_Contents_Page_List')->parse('<a href="{permalink}" class="hidden sm:flex">{title}</a>'); ?>
+						<?php if($this->options->github): ?>
+                        <a class="w-5 h-5 hidden sm:flex" title="Github" target="_blank" rel="noopener" href="<?php $this->options->github();?>">
                             <iconify-icon width="20" icon="ri:github-line"></iconify-icon>
-                        </a>
-                        <a class="w-5 h-5 hidden sm:flex" title="ZhiHu" target="_blank" rel="noopener" href="<?php if($this->options->zhihu): ?><?php $this->options->zhihu();?><?php endif; ?>">
+                        </a><?php endif; ?>
+                        <?php if($this->options->zhihu): ?><a class="w-5 h-5 hidden sm:flex" title="ZhiHu" target="_blank" rel="noopener" href="<?php $this->options->zhihu();?>">
                             <iconify-icon width="20" icon="ri:zhihu-line"></iconify-icon>
-                        </a>
-                        <a class="w-5 h-5 hidden sm:flex" title="Twitter" target="_blank" rel="noopener" href="<?php if($this->options->twitter): ?><?php $this->options->twitter();?><?php endif; ?>">
+                        </a><?php endif; ?>
+                       <?php if($this->options->twitter): ?> <a class="w-5 h-5 hidden sm:flex" title="Twitter" target="_blank" rel="noopener" href="<?php $this->options->twitter();?>">
                             <iconify-icon width="20" icon="ri:twitter-line"></iconify-icon>
-                        </a>
-                        <a class="w-5 h-5 hidden sm:flex" title="Weibo" target="_blank" rel="noopener" href="<?php if($this->options->weibo): ?><?php $this->options->weibo();?><?php endif; ?>">
+                        </a><?php endif; ?>
+                       <?php if($this->options->weibo): ?> <a class="w-5 h-5 hidden sm:flex" title="Weibo" target="_blank" rel="noopener" href="<?php $this->options->weibo();?>">
                             <iconify-icon width="20" icon="ri:weibo-line"></iconify-icon>
-                        </a>
+                        </a><?php endif; ?>
                         <a class="w-5 h-5" title="toggle theme">
                             <iconify-icon width="20" icon="ri:sun-line" id="toggle-dark"></iconify-icon>
                         </a>
